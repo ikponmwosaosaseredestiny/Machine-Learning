@@ -1,5 +1,7 @@
 Summary of work:
 
+Prediction of 
+
 1. Read CSV file and created a dataframe with the pandas library.
 2. Scatter plot comparing features with the output parameter using the matplotlib.pyplot library
 3. Compared all features of the dataset among each other using the seaborn library
@@ -11,3 +13,7 @@ Summary of work:
 6. Determination of the model accuracy (R-squared) for both the training and testing dataset (0.584 & 0.4578)
 7. Tested out the model with new data.
 8. plotted the actual and predicted values of the model for both the training and testing dataset, with the perfect fit line and error bands +20%, +10%, -10%, -20%
+
+Take-away:
+- Features scaling did not affect the accuracy of the model
+- changing the training and test dataset, randomized state affected the accuracy of the model
