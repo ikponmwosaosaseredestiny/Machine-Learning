@@ -1,6 +1,6 @@
 Summary of work:
 
-Prediction of 
+**Prediction of the price of an apartment using the area of the entire apartment, number of bedrooms, number of bathrooms, number of stories, and number of parking space.
 
 1. Read CSV file and created a dataframe with the pandas library.
 2. Scatter plot comparing features with the output parameter using the matplotlib.pyplot library
