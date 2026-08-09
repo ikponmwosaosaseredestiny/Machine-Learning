@@ -1,0 +1,48 @@
+XGBoost Model
+
+* prediction of compressive strength
+
+
+*Concrete is the most important material in civil engineering. The
+concrete compressive strength is a highly nonlinear function of age and ingredients. These ingredients include cement, blast furnace slag, fly ash, water, superplasticizer, coarse aggregate, and fine aggregate.
+
+
+Data Characteristics:
+
+The actual concrete compressive strength (MPa) for a given mixture under a
+specific age (days) was determined from laboratory. Data is in raw form (not scaled).
+
+Summary Statistics:
+
+Number of instances (observations): 1030
+Number of Attributes: 9
+Attribute breakdown: 8 quantitative input variables, and 1 quantitative output variable
+Missing Attribute Values: None
+
+
+
+ACTIVITIES CARRIED OUT
+
+1. features statistics was determined using the dataframe describe method
+
+2. cleaned data; replacing empty fields with an extremely high value so the model can treat it as an outlier (this is only done/idea when the empty fields are rife, such  that dropping the features or rows would affect the performance/generalization of the model)
+
+3. separated the input features (cement, blast furnance slag, fly ash, water, superplasticizer, coarse aggregate, fine aggregate, and age) and the output feature (compressive strength) 
+
+6. Data split into training (80%) and testing (20%) dataset using sklearn train_test_split
+
+
+7. imported the XGBoost model from XGBRegressor, trained the model using the 80% dataset and got and R-squared value of 0.9967 for the training dataset and 0.9228 for testing dataset. No features scaling required Boosting algorithms.
+
+
+8. Hyper-parameter tunning was performed to improve the accuracy of the model using sklearn GridSearchCV - parameters (kernel, c, gamma, epsilon) and the best parameters came out : {'n_estimators': 50, 'random_state': 30}, results: the R-squared value of the training dataset to 0.9182 and testing dataset to 0.8476, which did not increase the accuracy compared to the default parameters.
+
+9. Model visualization (scatter plot); plotted the actual y (output) values vs the XGBoost model predicted y (output) values. 
+
+
+10. 5 K-fold cross validation analysis was done and the following results was produced (MAE:4.5321, R2:0.8709, MAPE:0.1643, RMSE: 5.9827)
+
+11. prediction metrics for the training dataset i.e actual training values vs predicted training values (MAE:3.6933, MSE: 23.2364, RMSE: 4.8204, R2: 0.9182, MAPE: 13.32), and for the testing dataset i.e actual testing values vs predicted testing values (MAE: 4.8478, MSE: 39.2614, RMSE: 6.2659, R2: 0.8476, MAPE: 16.18)
+
+
+
